@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content%}
+	{% for pet in pets %}
+		<article class="media content-section">
+			<!-- <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"> -->
+			  <div class="media-body">
+			    <div class="article-metadata">
+			      <a class="mr-2" href="#">{{ pet.owner }}</a>
+			      <small class="text-muted">{{ pet.date_added }}</small>
+			    </div>
+			    <h2><a class="article-title" href="{% url 'pet-detail' pet.id %}">{{ pet.name }}</a></h2>
+			    <p class="article-content">{{ pet.description }}</p>
+			  </div>
+		</article>
+	{% endfor %}
+{% endblock content %}
