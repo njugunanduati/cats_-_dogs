@@ -24,7 +24,7 @@ SECRET_KEY = 'my_SECRET_KEY_django'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ourpets.herokuapp.com']
 
 
 # Application definition
