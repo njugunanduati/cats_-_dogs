@@ -22,7 +22,7 @@ class PetDetailView(DetailView):
 class PetCreateView(LoginRequiredMixin, CreateView):
 	model = Pet
 	template_name = 'pet_form.html'
-	fields = ['name', 'description', 'birth_date']
+	fields = ['name', 'pet_type', 'description', 'birth_date']
 
 	def form_valid(self, form):
 		form.instance.owner = self.request.user
@@ -48,7 +48,7 @@ class PetUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
 class PetDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Pet
 	template_name = 'pet_confirm_delete.html'
-	fields = ['name', 'description', 'birth_date']
+	fields = ['name', 'pet_type', 'description', 'birth_date']
 	success_url = '/pet'
 
 
